@@ -16,6 +16,9 @@ author_profile: true
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://arxiv.org/abs/2210.05950)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Code</span>](https://github.com/ewrfcas/ZITS-PlusPlus)
 
+<b>Chenjie Cao</b>, Yanwei Fu. <b>Improving Transformer-based Image Matching by Cascaded Capturing Spatially Informative Keypoints.</b> Preprint, 2023.
+[<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://arxiv.org/abs/2303.02885)
+
 Qiaole Dong<a>*</a>, <b>Chenjie Cao<a>*</a></b>, and Yanwei Fu<sup><a title='Corresponding author'>✉</a></sup>.
 <b>Rethinking Optical Flow from Geometric Matching Consistent Perspective.</b> CVPR 2023. 
 [<span class="underline-on-hover" style="color:#87CEFA">Project</span>](https://dqiaole.github.io/MatchFlow/)
