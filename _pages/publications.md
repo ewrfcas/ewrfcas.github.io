@@ -32,26 +32,29 @@ Qiaole Dong<a>*</a>, <b>Chenjie Cao<a>*</a></b>, and Yanwei Fu<sup><a title='Cor
 \| [<span class="underline-on-hover" style="color:#87CEFA">Code</span>](https://github.com/ewrfcas/MAE-FAR)
 
 Qiaole Dong<a>*</a>, <b>Chenjie Cao<a>*</a></b>, and Yanwei Fu<sup><a title='Corresponding author'>✉</a></sup>.
-<b>Incremental transformer structure enhanced image inpainting with masking positional encoding.</b> CVPR 2022. [<span class="underline-on-hover" style="color:#87CEFA">Project</span>](https://dqiaole.github.io/ZITS_inpainting/)
+<b>Incremental Transformer Structure Enhanced Image Inpainting with Masking Positional Encoding.</b> CVPR 2022. [<span class="underline-on-hover" style="color:#87CEFA">Project</span>](https://dqiaole.github.io/ZITS_inpainting/)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://openaccess.thecvf.com/content/CVPR2022/papers/Dong_Incremental_Transformer_Structure_Enhanced_Image_Inpainting_With_Masking_Positional_Encoding_CVPR_2022_paper.pdf)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Code</span>](https://github.com/DQiaole/ZITS_inpainting)
 
+<b>Chenjie Cao</b>, Chengrong Wang, Yuntao Zhang, Yanwei Fu. <b>Wavelet Prior Attention Learning in Axial Inpainting Network.</b> Preprint, 2022.
+[<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://arxiv.org/abs/2206.03113)
+
 Chao Wen<a>*</a>, Yinda Zhang<a>*</a>, <b>Chenjie Cao</b>, et al. 
-<b>Pixel2mesh++: 3d mesh generation and refinement from multi-view images.</b> TPAMI. 2022.
+<b>Pixel2mesh++: 3d Mesh Generation and Refinement from Multi-View Images.</b> TPAMI. 2022.
 [<span class="underline-on-hover" style="color:#87CEFA">Project</span>](https://ewrfcas.github.io/Pixel2MeshPlusPlus-MVDISN)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://arxiv.org/abs/2204.09866)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Code</span>](https://github.com/ewrfcas/Pixel2MeshPlusPlus-MVDISN)
 
-Chengrong Wang <b>Chenjie Cao</b>, et al. <b>High-Fidelity Portrait Editing Via Exploring Differentiable Guided Sketches from the Latent Space.</b> ICASSP. 2022.
+Chengrong Wang <b>Chenjie Cao</b>, et al. <b>High-Fidelity Portrait Editing via Exploring Differentiable Guided Sketches from the Latent Space.</b> ICASSP. 2022.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://ieeexplore.ieee.org/document/9747428/)
 
 <b>Chenjie Cao</b>, Yuxin Hong, Xiang Li, Chengrong Wang, Chengming Xu, XiangYang Xue, Yanwei Fu<sup><a title='Corresponding author'>✉</a></sup>. 
-<b>The image local autoregressive transformer.</b> NeurIPS. 2021.
+<b>The Image Local Autoregressive Transformer.</b> NeurIPS. 2021.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://arxiv.org/abs/2106.02514)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Code</span>](https://github.com/ewrfcas/iLAT)
 
 <b>Chenjie, Cao</b>, and Yanwei Fu<sup><a title='Corresponding author'>✉</a></sup>. 
-<b>Learning a sketch tensor space for image inpainting of man-made scenes.</b> ICCV. 2021.
+<b>Learning a Sketch Tensor Space for Image Inpainting of Man-Made Scenes.</b> ICCV. 2021.
 [<span class="underline-on-hover" style="color:#87CEFA">Project</span>](https://ewrfcas.github.io/MST_inpainting/)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://arxiv.org/abs/2103.15087)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Code</span>](https://github.com/ewrfcas/MST_inpainting)
@@ -61,17 +64,17 @@ Liang Xu, Xuanwei Zhang, Lu Li, Hai Hu, <b>Chenjie Cao</b>, et al. <b>CLUE: A Ch
 \| [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://aclanthology.org/2020.coling-main.419/)
 \| [<span class="underline-on-hover" style="color:#87CEFA">Code</span>](https://github.com/CLUEbenchmark/CLUE)
 
-Wang Zhe<sup><a title='Corresponding author'>✉</a></sup>, <b>Chenjie Cao</b>, and Yujin Zhu. <b>Entropy and confidence-based undersampling boosting random forests for imbalanced problems.</b> TNNLS. 2020.
+Wang Zhe<sup><a title='Corresponding author'>✉</a></sup>, <b>Chenjie Cao</b>, and Yujin Zhu. <b>Entropy and Confidence-based Undersampling Boosting Random Forests for Imbalanced Problems.</b> TNNLS. 2020.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://ieeexplore.ieee.org/document/8968753)
 
-Chen Jiahao, <b>Chenjie Cao</b>, and Xiuyan Jiang<sup><a title='Corresponding author'>✉</a></sup>. <b>SiBert: Enhanced Chinese pre-trained language model with sentence insertion.</b> LREC. 2020.
+Chen Jiahao, <b>Chenjie Cao</b>, and Xiuyan Jiang<sup><a title='Corresponding author'>✉</a></sup>. <b>SiBert: Enhanced Chinese Pre-trained Language Model with Sentence Insertion.</b> LREC. 2020.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://aclanthology.org/2020.lrec-1.293.pdf)
 
-Wang Zhe<sup><a title='Corresponding author'>✉</a></sup>, and <b>Chenjie Cao</b>. <b>Cascade interpolation learning with double subspaces and confidence disturbance for imbalanced problems.</b> Neural Networks. 2019.
+Wang Zhe<sup><a title='Corresponding author'>✉</a></sup>, and <b>Chenjie Cao</b>. <b>Cascade Interpolation Learning with Double Subspaces and Confidence Disturbance for Imbalanced Problems.</b> Neural Networks. 2019.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765)
 
-<b>Chenjie Cao</b>, and Zhe Wang<sup><a title='Corresponding author'>✉</a></sup>. <b>IMCStacking: Cost-sensitive stacking learning with feature inverse mapping for imbalanced problems.</b> KBS. 2018.
+<b>Chenjie Cao</b>, and Zhe Wang<sup><a title='Corresponding author'>✉</a></sup>. <b>IMCStacking: Cost-Sensitive Stacking Learning with Feature Inverse Mapping for Imbalanced Problems.</b> KBS. 2018.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947)
 
-Li DongDong, Zhe Wang, <b>Chenjie Cao</b> et al. <b>Information entropy based sample reduction for support vector data description.</b> ASC 2018.
+Li DongDong, Zhe Wang, <b>Chenjie Cao</b> et al. <b>Information Entropy based Sample Reduction for Support Vector Data Description.</b> ASC 2018.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121)
