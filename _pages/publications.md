@@ -7,6 +7,29 @@ author_profile: true
 
 <a>*</a> indicates co-first authour
 
+<tr>
+    <td style="padding:20px;width:25%;vertical-align:middle">
+      <div class="one">
+        <img src='../images/PGIC_teaser.png' width="160">
+      </div>
+    </td>
+    <td style="padding:20px;width:75%;vertical-align:middle">
+      <a href="https://arxiv.org/abs/2206.04384">
+        <papertitle>Value Memory Graph: A Graph-Structured World Model for Offline Reinforcement Learning</papertitle>
+      </a>
+      <br>
+      <strong>Chenjie Cao</strong>,
+      <a href="http://www.cs.columbia.edu/~lierranli/">Li Erran Li</a>,
+      <a href="http://www.mohamed-elhoseiny.com/">Mohamed Elhoseiny</a>
+      <br>
+      <em>ICLR, 2023</em>
+      <br>
+              <a href="https://openreview.net/forum?id=UYcIheNY9Pf">openreview</a> /
+              <a href="https://arxiv.org/abs/2206.04384">arXiv</a>
+      <p></p>
+    </td>
+</tr>
+
 <b>Chenjie Cao</b>, Qiaole Dong, Yikai Wang, Yunuo Cai, Yanwei Fu<sup><a title='Corresponding author'>✉</a></sup>.
 <b>A Unified Prompt-Guided In-Context Inpainting Framework for Reference-based Image Manipulations.</b> Preprint, 2023.
 [<span class="underline-on-hover" style="color:#87CEFA">Paper</span>](https://arxiv.org/abs/2305.11577)
