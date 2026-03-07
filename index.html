@@ -1,955 +1,958 @@
 <!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Chenjie Cao</title>
-  
   <meta name="author" content="Chenjie Cao">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --card-bg: #ffffff;
+      --text: #1a1a2e;
+      --text-secondary: #555770;
+      --accent: #2d5be3;
+      --accent-light: #e8edfb;
+      --border: #e8e8ee;
+      --tag-bg: #f0f1f5;
+      --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+      --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+      --radius: 12px;
+      --max-width: 860px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    a:hover { opacity: 0.75; }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ---- Hero Section ---- */
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      padding: 40px 0 32px;
+    }
+    .hero-text { flex: 1; }
+    .hero-text h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .hero-text h1 span {
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--text-secondary);
+      margin-left: 8px;
+    }
+    .hero-text .bio {
+      margin-top: 16px;
+      color: var(--text-secondary);
+      font-size: 14.5px;
+      line-height: 1.75;
+    }
+    .hero-text .bio strong { color: var(--text); font-weight: 500; }
+    .hero-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .hero-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--tag-bg);
+      color: var(--text);
+      transition: all 0.2s;
+    }
+    .hero-links a:hover {
+      background: var(--accent);
+      color: #fff;
+      opacity: 1;
+    }
+    .hero-links a svg {
+      width: 14px; height: 14px;
+      fill: currentColor;
+    }
+
+    .avatar-wrap {
+      flex-shrink: 0;
+    }
+    .avatar-wrap img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      transition: transform 0.3s;
+    }
+    .avatar-wrap img:hover { transform: scale(1.04); }
+
+    /* ---- Visitor Counter ---- */
+    .visitor-count {
+      text-align: center;
+      font-size: 12px;
+      color: #aaa;
+      margin-top: 8px;
+    }
+
+    /* ---- Section ---- */
+    .section {
+      margin-top: 48px;
+    }
+    .section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--text);
+      display: inline-block;
+    }
+
+    /* ---- Experience Timeline ---- */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 4px;
+      bottom: 4px;
+      width: 1.5px;
+      background: var(--border);
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 16px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -22px;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      border: 2px solid var(--bg);
+      transition: background 0.2s;
+    }
+    .timeline-item:first-child::before {
+      background: var(--accent);
+    }
+    .timeline-item .time {
+      font-size: 12px;
+      color: #aaa;
+      font-weight: 500;
+    }
+    .timeline-item .role {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* ---- Publication Card ---- */
+    .note-equal {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .pub-card {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: box-shadow 0.25s, border-color 0.25s;
+    }
+    .pub-card:hover {
+      box-shadow: var(--shadow-hover);
+      border-color: transparent;
+    }
+    .pub-thumb {
+      flex-shrink: 0;
+      width: 150px;
+      height: 100px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--tag-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pub-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .pub-card:hover .pub-thumb img {
+      transform: scale(1.05);
+    }
+    .pub-info { flex: 1; min-width: 0; }
+    .pub-title {
+      font-weight: 600;
+      font-size: 14.5px;
+      line-height: 1.45;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .pub-title a { color: inherit; }
+    .pub-title a:hover { color: var(--accent); opacity: 1; }
+    .pub-authors {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .pub-authors strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+    .pub-venue {
+      font-size: 12.5px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+    .pub-venue .venue-name {
+      color: var(--accent);
+    }
+    .pub-venue .venue-badge {
+      display: inline-block;
+      background: #fee2e2;
+      color: #dc2626;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 4px;
+      margin-left: 4px;
+    }
+    .pub-links {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+    .pub-links a {
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 5px;
+      background: var(--tag-bg);
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .pub-links a:hover {
+      background: var(--accent-light);
+      color: var(--accent);
+      opacity: 1;
+    }
+    .pub-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ---- Year Divider ---- */
+    .year-divider {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 12px;
+      margin-bottom: 4px;
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .year-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ---- Misc / Awards ---- */
+    .misc-list {
+      list-style: none;
+      padding: 0;
+    }
+    .misc-list li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.6;
+    }
+    .misc-list li:last-child { border-bottom: none; }
+    .misc-list li strong { color: var(--text); }
+
+    /* ---- Footer ---- */
+    .footer {
+      margin-top: 64px;
+      text-align: center;
+      font-size: 12px;
+      color: #bbb;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .footer a { color: #bbb; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 640px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 24px;
+      }
+      .hero-links { justify-content: center; }
+      .avatar-wrap img { width: 120px; height: 120px; }
+      .pub-card { flex-direction: column; }
+      .pub-thumb { width: 100%; height: 160px; }
+      .section-title { font-size: 19px; }
+    }
+  </style>
 </head>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<span id="busuanzi_container_site_uv">Visitors: <span id="busuanzi_value_site_uv"></span></span>
-
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Chenjie Cao 曹辰捷</name>
-              </p>
-              <p>Welcome! Chenjie Cao is at Tencent Hunyuan3D, working as a researcher of computer vision.
-                He received his Ph.D. degree from Fudan University supervised by <a href="https://yanweifu.github.io/">Prof. Yanwei Fu</a>.
-                His research interests focus on computer vision, which includes <strong>image inpainting</strong>, <strong>image synthesis</strong>, <strong>multi-view stereo</strong>, <strong>3D reconstruction and generation</strong>, and <strong>video generation</strong>.
-              </p>
-              <p style="text-align:center">
-                <a href="ccjdurandal422@163.com">Email</a> &nbsp/&nbsp
-                <a href="data/resume_ccj.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?user=1INK-I0AAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://github.com/ewrfcas/">GitHub</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="img/profile.jpg"><img style="width:65%;max-width:65%" alt="profile photo" src="img/profile.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Experience</heading>
-              <p>
-                * Researcher of Tencent Hunyuan3D, 2025.7 - present.
-              </p>
-              <p>
-                * Researcher of DAMO Academy, Alibaba Group, 2024.1 - 2025.7.
-              </p>
-              <p>
-                * Post doc of Computer Science and Technology, Fudan University, 2024 - present.
-              </p>
-              <p>
-                * Ph.D of Statistics (Machine Learning track), Fudan University, 2020 - 2024.
-              </p>
-              <p>
-                * Algorithm engineer, PingAn OneConnect, 2019 - 2020.
-              </p>
-              <p>
-                * Master of Computer Science and Technology, East China University of Science and Technology (ECUST), 2016 - 2019.
-              </p>
-              <p>
-                * Bachelor of Computer Science and Technology, East China University of Science and Technology (ECUST), 2012 - 2016.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-          <p align="left:100px">* means equal contribution</p>
+<div class="container">
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/earthcrafter.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2407.04461">
-                <papertitle>EarthCrafter: Scalable 3D Earth Generation via Dual-Sparse Latent Diffusion.</papertitle>
-              </a>
-              <br>
-              Shang Liu*,
-              <strong>Chenjie Cao*</strong>,
-              Chaohui Yu,
-              Wen Qian,
-              Jing Wang,
-              Fan Wang
-              <br>
-              <em>AAAI 2026 <b style="color: red;">(Oral)</b></em>
-              <br>
-              <a href="https://arxiv.org/abs/2507.16535">paper</a>
-              <p></p>
-              <p>
-                In this paper, we propose a geographic 3D generation framework called EarthCrafter to address extremely large-scale 3D generation. We also propose Aerial-Earth3D, the largest 3D aerial dataset to date, consisting of 50k curated scenes (each measuring 600m x 600m) captured across the U.S. mainland, comprising 45M multi-view Google Earth frames.
-              </p>
-            </td>
-          </tr>
+  <!-- ==================== HERO ==================== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Chenjie Cao <span>曹辰捷</span></h1>
+      <p class="bio">
+        Researcher at <strong>Tencent Hunyuan3D</strong>. Ph.D. from Fudan University supervised by
+        <a href="https://yanweifu.github.io/">Prof.&nbsp;Yanwei Fu</a>.<br>
+        Research interests span <strong>image inpainting &amp; synthesis</strong>,
+        <strong>multi-view stereo</strong>, <strong>3D reconstruction &amp; generation</strong>,
+        and <strong>video generation</strong>.
+      </p>
+      <div class="hero-links">
+        <a href="mailto:ccjdurandal422@163.com">
+          <svg viewBox="0 0 24 24"><path d="M2 6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm2 0l8 5 8-5H4zm0 2.236V18h16V8.236l-8 5-8-5z"/></svg>
+          Email
+        </a>
+        <a href="data/resume_ccj.pdf">
+          <svg viewBox="0 0 24 24"><path d="M6 2a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5zM8 13h8v2H8v-2zm0 4h5v2H8v-2z"/></svg>
+          CV
+        </a>
+        <a href="https://scholar.google.com/citations?user=1INK-I0AAAAJ&hl=en">
+          <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 01-4.03-12.746l.002.001C6.11 10.08 5 8.18 5 6a7 7 0 0114 0c0 2.18-1.11 4.08-2.972 5.255l.002-.001A7 7 0 0112 24zM12 2a5 5 0 00-5 5c0 1.544.826 3.162 2.2 4.31l.5.42-.5.42C7.826 13.3 7 14.92 7 16.46A5 5 0 0012 22a5 5 0 005-5.54c0-1.544-.826-3.162-2.2-4.31l-.5-.42.5-.42c1.374-1.148 2.2-2.766 2.2-4.31A5 5 0 0012 2z"/></svg>
+          Scholar
+        </a>
+        <a href="https://github.com/ewrfcas/">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="avatar-wrap">
+      <img src="img/profile.jpg" alt="Chenjie Cao">
+    </div>
+  </section>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/uni3c.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2504.14899">
-                <papertitle>Uni3C: Unifying Precisely 3D-Enhanced Camera and Human Motion Controls for Video Generation.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Jingkai Zhou,
-              Shikai Li,
-              Jingyun Liang,
-              Chaohui Yu,
-              Fan Wang,
-              Xiangyang Xue,
-              Yanwei Fu
-              <br>
-              <em>Siggraph Asia 2025</em>
-              <br>
-              <a href="https://ewrfcas.github.io/Uni3C/">page</a> /
-              <a href="https://arxiv.org/abs/2504.14899">paper</a> /
-              <a href="https://github.com/ewrfcas/Uni3C">code</a>
-              <p></p>
-              <p>
-                Uni3C is a unified 3D-enhanced framework for precise control of both camera and human motion in video generation. Uni3C includes two key contributions: 1) sa plug-and-play generalized camera control module, called PCDController; 2) we propose a jointly aligned 3D world guidance for the inference phase that seamlessly integrates both scenic point clouds and SMPL-X characters to unify the control signals for camera and human motion.
-              </p>
-            </td>
-          </tr>
+  <div class="visitor-count">
+    <span id="busuanzi_container_site_uv">Visitors:&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+  </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/lion-lora.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2507.05678">
-                <papertitle>LiON-LoRA: Rethinking LoRA Fusion to Unify Controllable Spatial and Temporal Generation for Video Diffusion.</papertitle>
-              </a>
-              <br>
-              Yisu Zhang*,
-              <strong>Chenjie Cao*</strong>,
-              Chaohui Yu,
-              Jianke Zhu
-              <br>
-              <em>ICCV 2025</em>
-              <br>
-              <a href="https://arxiv.org/abs/2507.05678">paper</a>
-              <p></p>
-              <p>
-                We propose LiON-LoRA, a novel framework that rethinks LoRA fusion through three core principles: linear scalability, orthogonality, and norm consistency for video control.
-              </p>
-            </td>
-          </tr>
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="time">2025.7 – present</div>
+        <div class="role">Researcher, Tencent Hunyuan3D</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2024.1 – 2025.7</div>
+        <div class="role">Researcher, DAMO Academy, Alibaba Group</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2024 – present</div>
+        <div class="role">Post-doc, Computer Science and Technology, Fudan University</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2020 – 2024</div>
+        <div class="role">Ph.D. in Statistics (Machine Learning), Fudan University</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2019 – 2020</div>
+        <div class="role">Algorithm Engineer, PingAn OneConnect</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2016 – 2019</div>
+        <div class="role">M.Sc. in Computer Science, ECUST</div>
+      </div>
+      <div class="timeline-item">
+        <div class="time">2012 – 2016</div>
+        <div class="role">B.Sc. in Computer Science, ECUST</div>
+      </div>
+    </div>
+  </section>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/mvgenmaster.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2411.16157">
-                <papertitle>MVGenMaster: Scaling Multi-View Generation from Any Image via 3D Priors Enhanced Diffusion Model.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Chaohui Yu,
-              Shang Liu,
-              Fan Wang,
-              Xiangyang Xue,
-              Yanwei Fu
-              <br>
-              <em>CVPR 2025</em>
-              <br>
-              <a href="https://ewrfcas.github.io/MVGenMaster/">page</a> /
-              <a href="https://arxiv.org/abs/2411.16157">paper</a> /
-              <a href="https://github.com/ewrfcas/MVGenMaster">code</a>
-              <p></p>
-              <p>
-                We introduce MVGenMaster, a multi-view diffusion model enhanced with 3D priors to address versatile Novel View Synthesis (NVS) tasks. MVGenMaster leverages 3D priors that are warped using metric depth and camera poses, significantly enhancing both generalization and 3D consistency in NVS.
-              </p>
-            </td>
-          </tr>
+  <!-- ==================== PUBLICATIONS ==================== -->
+  <section class="section">
+    <h2 class="section-title">Publications</h2>
+    <p class="note-equal">* denotes equal contribution</p>
+    <div class="pub-list">
 
-           <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/ASUKA.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2312.04831">
-                <papertitle>Towards Enhanced Image Inpainting: Mitigating Unwanted Object Insertion and Preserving Color Consistency.</papertitle>
-              </a>
-              <br>
-              Yikai Wang*,
-              <strong>Chenjie Cao*</strong>,
-              Junqiu Yu*,
-              Ke Fan,
-              Xiangyang Xue,
-              Yanwei Fu
-              <br>
-              <em>CVPR 2025 <b style="color: red;">(Highlight)</b></em>
-              <br>
-              <a href="https://yikai-wang.github.io/asuka/">page</a> /
-              <a href="https://arxiv.org/abs/2312.04831">paper</a>
-              <p></p>
-              <p>
-                Leveraging MAE priors to stabilize the inpainting of StableDiffusion and FLUX. Moreover, we propose an effective augmentation strategy to eliminate the chromatic aberration in inpainting.
-              </p>
-            </td>
-          </tr>
+      <!-- ---- 2026 ---- -->
+      <div class="year-divider">2026</div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/mvinpainter.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2408.08000">
-                <papertitle>MVInpainter: Learning Multi-View Consistent Inpainting to Bridge 2D and 3D Editing.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Chaohui Yu,
-              Yanwei Fu,
-              Fan Wang,
-              Xiangyang Xue
-              <br>
-              <em>NeurIPS 2024</em>
-              <br>
-              <a href="https://ewrfcas.github.io/MVInpainter/">page</a> /
-              <a href="https://arxiv.org/abs/2408.08000">paper</a> /
-              <a href="https://github.com/ewrfcas/MVInpainter">code</a>
-              <p></p>
-              <p>
-                In this work, we propose MVInpainter, re-formulating the 3D editing as a multi-view 2D inpainting task. Specifically, MVInpainter inpaints multi-view images with the reference guidance rather than intractably generating an entirely novel view from scratch.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/worldstereo.jpg" alt="WorldStereo"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2603.02049">WorldStereo: Bridging Camera-Guided Video Generation and Scene Reconstruction via 3D Geometric Memories</a></div>
+          <div class="pub-authors">Yisu Zhang*, <strong>Chenjie Cao*</strong>, Tengfei Wang, Xuhui Zuo, Junta Wu, Jianke Zhu, Chunchao Guo</div>
+          <div class="pub-venue"><span class="venue-name">CVPR 2026</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2603.02049">paper</a>
+            <a href="https://github.com/FuchengSu/WorldStereo">code</a>
+          </div>
+          <div class="pub-desc">A novel framework that bridges camera-guided video generation and 3D reconstruction via global-geometric memory and spatial-stereo memory.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/Animate3D.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2407.11398">
-                <papertitle>Animate3D: Animating Any 3D Model with Multi-view Video Diffusion.</papertitle>
-              </a>
-              <br>
-              Yanqin Jiang,
-              Chaohui Yu,
-              <strong>Chenjie Cao</strong>,
-              Fan Wang,
-              Weiming Hu,
-              Jin Gao
-              <br>
-              <em>NeurIPS 2024</em>
-              <br>
-              <a href="https://animate3d.github.io/">page</a> /
-              <a href="https://arxiv.org/abs/2407.11398">paper</a> /
-              <a href="https://github.com/yanqinJiang/Animate3D">code</a>
-              <p></p>
-              <p>
-                In this work, we present Animate3D, a novel framework for animating any static 3D model. We present a large-scale multi-view video dataset (MV-Video) to train the novel multi-view video diffusion model (MV-VDM).
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/worldcompass.jpg" alt="WorldCompass"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2602.09022">WorldCompass: Reinforcement Learning for Long-Horizon World Models</a></div>
+          <div class="pub-authors">Zehan Wang, Tengfei Wang, Haiyu Zhang, Xuhui Zuo, Junta Wu, Haoyuan Wang, Wenqiang Sun, Zhenwei Wang, <strong>Chenjie Cao</strong>, Hengshuang Zhao, Chunchao Guo, Zhou Zhao</div>
+          <div class="pub-venue"><span class="venue-name">Arxiv 2026</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2602.09022">paper</a>
+          </div>
+          <div class="pub-desc">A novel RL post-training framework for long-horizon, interactive video-based world models.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/VCD-Texture.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2407.04461">
-                <papertitle>VCD-Texture: Variance Alignment based 3D-2D Co-Denoising for Text-Guided Texturing.</papertitle>
-              </a>
-              <br>
-              Shang Liu,
-              Chaohui Yu,
-              <strong>Chenjie Cao</strong>,
-              Wen Qian,
-              Fan Wang
-              <br>
-              <em>ECCV 2024</em>
-              <br>
-              <a href="https://arxiv.org/abs/2407.04461">paper</a>
-              <p></p>
-              <p>
-                In this paper, we propose a Variance alignment based 3D-2D Collaborative Denoising framework, dubbed VCD-Texture, to address texture synthesis.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/earthcrafter.jpg" alt="EarthCrafter"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2507.16535">EarthCrafter: Scalable 3D Earth Generation via Dual-Sparse Latent Diffusion</a></div>
+          <div class="pub-authors">Shang Liu*, <strong>Chenjie Cao*</strong>, Chaohui Yu, Wen Qian, Jing Wang, Fan Wang</div>
+          <div class="pub-venue"><span class="venue-name">AAAI 2026</span> <span class="venue-badge">Oral</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2507.16535">paper</a>
+          </div>
+          <div class="pub-desc">A geographic 3D generation framework for extremely large-scale 3D generation, with the largest 3D aerial dataset (50k scenes, 45M frames).</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/SC4D.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2404.03736">
-                <papertitle>SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer.</papertitle>
-              </a>
-              <br>
-              Zijie Wu,
-              Chaohui Yu,
-              Yanqin Jiang,
-              <strong>Chenjie Cao</strong>,
-              Fan Wang,
-              Xiang Bai
-              <br>
-              <em>ECCV 2024</em>
-              <br>
-              <a href="https://sc4d.github.io/">page</a> /
-              <a href="https://arxiv.org/abs/2404.03736">paper</a> /
-              <a href="https://github.com/JarrentWu1031/SC4D">code</a>
-              <p>
-                This paper proposes an efficient, sparse-controlled video-to-4D framework named SC4D, that decouples motion and appearance to achieve superior video-to-4D generation.
-              </p>
-            </td>
-          </tr>
+      <!-- ---- 2025 ---- -->
+      <div class="year-divider">2025</div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/mvs_neus.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2408.02079">
-                <papertitle>Improving Neural Surface Reconstruction with Feature Priors from Multi-View Images.</papertitle>
-              </a>
-              <br>
-              Xinlin Ren*,
-              <strong>Chenjie Cao*</strong>,
-              Yanwei Fu,
-              Xiangyang Xue
-              <br>
-              <em>ECCV 2024</em>
-              <br>
-              <a href="https://arxiv.org/abs/2408.02079">paper</a> /
-              <a href="https://github.com/maybeLx/MVS_NeuS">code</a>
-              <p>
-                In this study, we comprehensively explore multi-view feature priors from seven pretext visual tasks, comprising thirteen methods. Our main goal is to strengthen Neural Surface Reconstruction (NSR) training by considering a wide range of possibilities.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/uni3c.jpg" alt="Uni3C"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2504.14899">Uni3C: Unifying Precisely 3D-Enhanced Camera and Human Motion Controls for Video Generation</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Jingkai Zhou, Shikai Li, Jingyun Liang, Chaohui Yu, Fan Wang, Xiangyang Xue, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">SIGGRAPH Asia 2025</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/Uni3C/">page</a>
+            <a href="https://arxiv.org/abs/2504.14899">paper</a>
+            <a href="https://github.com/ewrfcas/Uni3C">code</a>
+          </div>
+          <div class="pub-desc">A unified 3D-enhanced framework for precise control of both camera and human motion in video generation via PCDController and SMPL-X integration.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/ARCI_teaser.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2305.11577">
-                <papertitle>LeftRefill: Filling Right Canvas based on Left Reference through Generalized Text-to-Image Diffusion Model.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Yunuo Cai,
-              Qiaole Dong,
-              Yikai Wang,
-              Yanwei Fu
-              <br>
-              <em>CVPR 2024</em>
-              <br>
-              <a href="https://ewrfcas.github.io/LeftRefill/">page</a> /
-              <a href="https://arxiv.org/abs/2305.11577">paper</a> /
-              <a href="https://github.com/ewrfcas/LeftRefill">code</a>
-              <p></p>
-              <p>
-                We formulate the reference-guided multi-view synthesis as an contextual inpainting issue, which is addressed by
-                pre-existing attention modules of pre-trained Text-to-Image model through prompt tuning.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/lion-lora.jpg" alt="LiON-LoRA"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2507.05678">LiON-LoRA: Rethinking LoRA Fusion to Unify Controllable Spatial and Temporal Generation for Video Diffusion</a></div>
+          <div class="pub-authors">Yisu Zhang*, <strong>Chenjie Cao*</strong>, Chaohui Yu, Jianke Zhu</div>
+          <div class="pub-venue"><span class="venue-name">ICCV 2025</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2507.05678">paper</a>
+          </div>
+          <div class="pub-desc">Rethinking LoRA fusion through linear scalability, orthogonality, and norm consistency for video control.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/seele.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2401.16861">
-                <papertitle>Repositioning the Subject within Image.</papertitle>
-              </a>
-              <br>
-              Yikai Wang,
-              <strong>Chenjie Cao</strong>,
-              Qiaole Dong,
-              Yifan Li,
-              Yanwei Fu
-              <br>
-              <em>TMLR 2024</em>
-              <br>
-              <a href="https://yikai-wang.github.io/seele">page</a> /
-              <a href="https://arxiv.org/abs/2401.16861">paper</a> /
-              <a href="https://github.com/Yikai-Wang/ReS">data</a>
-              <p></p>
-              <p>
-                 We employ a single diffusion generative model to address various sub-tasks with task-specific prompts.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/mvgenmaster.jpg" alt="MVGenMaster"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2411.16157">MVGenMaster: Scaling Multi-View Generation from Any Image via 3D Priors Enhanced Diffusion Model</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Chaohui Yu, Shang Liu, Fan Wang, Xiangyang Xue, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">CVPR 2025</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/MVGenMaster/">page</a>
+            <a href="https://arxiv.org/abs/2411.16157">paper</a>
+            <a href="https://github.com/ewrfcas/MVGenMaster">code</a>
+          </div>
+          <div class="pub-desc">A multi-view diffusion model enhanced with 3D priors warped using metric depth and camera poses for versatile Novel View Synthesis.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/mvsformer++.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2401.11673">
-                <papertitle>MVSFormer++: Revealing the Devil in Transformer's Details for Multi-View Stereo.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao*</strong>,
-              Xinlin Ren*,
-              Yanwei Fu
-              <br>
-              <em>ICLR 2024</em>
-              <br>
-              <a href="https://arxiv.org/abs/2401.11673">paper</a> /
-              <a href="https://github.com/maybeLx/MVSFormerPlusPlus/">code</a>
-              <p></p>
-              <p>
-                 We introduce MVSFormer++, a method that prudently maximizes the inherent characteristics of attention to enhance various components of the MVS pipeline.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/ASUKA.jpg" alt="ASUKA"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2312.04831">Towards Enhanced Image Inpainting: Mitigating Unwanted Object Insertion and Preserving Color Consistency</a></div>
+          <div class="pub-authors">Yikai Wang*, <strong>Chenjie Cao*</strong>, Junqiu Yu*, Ke Fan, Xiangyang Xue, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">CVPR 2025</span> <span class="venue-badge">Highlight</span></div>
+          <div class="pub-links">
+            <a href="https://yikai-wang.github.io/asuka/">page</a>
+            <a href="https://arxiv.org/abs/2312.04831">paper</a>
+          </div>
+          <div class="pub-desc">Leveraging MAE priors to stabilize StableDiffusion/FLUX inpainting with an effective augmentation strategy to eliminate chromatic aberration.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/SiameseNet.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/pdf/2308.03217.pdf">
-                <papertitle>Local Consensus Enhanced Siamese Network with Reciprocal Loss for Two-view Correspondence Learning.</papertitle>
-              </a>
-              <br>
-              Linbo Wang,
-              Jing Wu,
-              Xianyong Fang,
-              Zhengyi Liu,
-              <strong>Chenjie Cao</strong>,
-              Yanwei Fu
-              <br>
-              <em>ACMMM 2023</em>
-              <br>
-                  <a href="https://arxiv.org/pdf/2308.03217.pdf">paper</a>
-              <p></p>
-              <p>
-                A Siamese network with a reciprocal loss is proposed to classify inliers/outliers for two-view matching.
-              </p>
-            </td>
-          </tr>
+      <!-- ---- 2024 ---- -->
+      <div class="year-divider">2024</div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/cascadematching.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2303.02885">
-                <papertitle>Improving Transformer-based Image Matching by Cascaded Capturing Spatially Informative Keypoints.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Yanwei Fu
-              <br>
-              <em>ICCV 2023</em>
-              <br>
-                  <a href="https://ewrfcas.github.io/CasMTR/">page</a> /
-                  <a href="https://arxiv.org/abs/2303.02885">paper</a> /
-                  <a href="https://github.com/ewrfcas/CasMTR">code</a>
-              <p></p>
-              <p>
-                Matching pairs located in spatially informative keypoints of both reference and target views enjoy
-                better pose estimation. Thus a transformer-based cascaded matching model and a simple yet effective NMS filter are proposed.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/mvinpainter.jpg" alt="MVInpainter"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2408.08000">MVInpainter: Learning Multi-View Consistent Inpainting to Bridge 2D and 3D Editing</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Chaohui Yu, Yanwei Fu, Fan Wang, Xiangyang Xue</div>
+          <div class="pub-venue"><span class="venue-name">NeurIPS 2024</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/MVInpainter/">page</a>
+            <a href="https://arxiv.org/abs/2408.08000">paper</a>
+            <a href="https://github.com/ewrfcas/MVInpainter">code</a>
+          </div>
+          <div class="pub-desc">Re-formulating 3D editing as a multi-view 2D inpainting task with reference guidance.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/zits++.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2210.05950">
-                <papertitle>ZITS++: Image Inpainting by Improving the Incremental Transformer on Structural Priors.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao*</strong>,
-              Qiaole Dong*,
-              Yanwei Fu
-              <br>
-              <em>TPAMI 2023</em>
-              <br>
-              <a href="https://ewrfcas.github.io/ZITS-PlusPlus/">page</a> /
-              <a href="https://arxiv.org/abs/2210.05950">paper</a> /
-              <a href="https://github.com/ewrfcas/ZITS-PlusPlus">code</a>
-              <p></p>
-              <p>
-                The extension of CVPR work --ZITS. We further discuss the influence of various image priors
-                on inpainting, and choice to use learning-based edges (L-Edge) as the new prior to enhance the meaningful structure recovery.
-              </p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/Animate3D.jpg" alt="Animate3D"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2407.11398">Animate3D: Animating Any 3D Model with Multi-view Video Diffusion</a></div>
+          <div class="pub-authors">Yanqin Jiang, Chaohui Yu, <strong>Chenjie Cao</strong>, Fan Wang, Weiming Hu, Jin Gao</div>
+          <div class="pub-venue"><span class="venue-name">NeurIPS 2024</span></div>
+          <div class="pub-links">
+            <a href="https://animate3d.github.io/">page</a>
+            <a href="https://arxiv.org/abs/2407.11398">paper</a>
+            <a href="https://github.com/yanqinJiang/Animate3D">code</a>
+          </div>
+          <div class="pub-desc">A framework for animating any static 3D model with a large-scale multi-view video dataset (MV-Video).</div>
+        </div>
+      </div>
 
-          <tr>
-          <td style="padding:20px;width:25%;vertical-align:middle">
-            <div class="one">
-              <img src='img/matchflow.jpg' width="160">
-            </div>
-          </td>
-          <td style="padding:20px;width:75%;vertical-align:middle">
-            <a href="https://arxiv.org/abs/2303.08384">
-              <papertitle>Rethinking Optical Flow from Geometric Matching Consistent Perspective.</papertitle>
-            </a>
-            <br>
-            Qiaole Dong*,
-            <strong>Chenjie Cao*</strong>,
-            Yanwei Fu
-            <br>
-            <em>CVPR 2023</em>
-            <br>
-            <a href="https://dqiaole.github.io/MatchFlow/">page</a> /
-            <a href="https://arxiv.org/abs/2303.08384">paper</a> /
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/VCD-Texture.jpg" alt="VCD-Texture"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2407.04461">VCD-Texture: Variance Alignment based 3D-2D Co-Denoising for Text-Guided Texturing</a></div>
+          <div class="pub-authors">Shang Liu, Chaohui Yu, <strong>Chenjie Cao</strong>, Wen Qian, Fan Wang</div>
+          <div class="pub-venue"><span class="venue-name">ECCV 2024</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2407.04461">paper</a>
+          </div>
+          <div class="pub-desc">A Variance alignment based 3D-2D Collaborative Denoising framework for texture synthesis.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/SC4D.jpg" alt="SC4D"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2404.03736">SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer</a></div>
+          <div class="pub-authors">Zijie Wu, Chaohui Yu, Yanqin Jiang, <strong>Chenjie Cao</strong>, Fan Wang, Xiang Bai</div>
+          <div class="pub-venue"><span class="venue-name">ECCV 2024</span></div>
+          <div class="pub-links">
+            <a href="https://sc4d.github.io/">page</a>
+            <a href="https://arxiv.org/abs/2404.03736">paper</a>
+            <a href="https://github.com/JarrentWu1031/SC4D">code</a>
+          </div>
+          <div class="pub-desc">An efficient sparse-controlled video-to-4D framework that decouples motion and appearance.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/mvs_neus.jpg" alt="MVS-NeuS"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2408.02079">Improving Neural Surface Reconstruction with Feature Priors from Multi-View Images</a></div>
+          <div class="pub-authors">Xinlin Ren*, <strong>Chenjie Cao*</strong>, Yanwei Fu, Xiangyang Xue</div>
+          <div class="pub-venue"><span class="venue-name">ECCV 2024</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2408.02079">paper</a>
+            <a href="https://github.com/maybeLx/MVS_NeuS">code</a>
+          </div>
+          <div class="pub-desc">Comprehensively exploring multi-view feature priors from seven pretext visual tasks to strengthen Neural Surface Reconstruction.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/ARCI_teaser.jpg" alt="LeftRefill"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2305.11577">LeftRefill: Filling Right Canvas based on Left Reference through Generalized Text-to-Image Diffusion Model</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Yunuo Cai, Qiaole Dong, Yikai Wang, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">CVPR 2024</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/LeftRefill/">page</a>
+            <a href="https://arxiv.org/abs/2305.11577">paper</a>
+            <a href="https://github.com/ewrfcas/LeftRefill">code</a>
+          </div>
+          <div class="pub-desc">Formulating reference-guided multi-view synthesis as contextual inpainting via prompt tuning on pre-trained T2I models.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/seele.jpg" alt="ReS"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2401.16861">Repositioning the Subject within Image</a></div>
+          <div class="pub-authors">Yikai Wang, <strong>Chenjie Cao</strong>, Qiaole Dong, Yifan Li, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">TMLR 2024</span></div>
+          <div class="pub-links">
+            <a href="https://yikai-wang.github.io/seele">page</a>
+            <a href="https://arxiv.org/abs/2401.16861">paper</a>
+            <a href="https://github.com/Yikai-Wang/ReS">data</a>
+          </div>
+          <div class="pub-desc">A single diffusion generative model addressing various sub-tasks with task-specific prompts.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/mvsformer++.jpg" alt="MVSFormer++"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2401.11673">MVSFormer++: Revealing the Devil in Transformer's Details for Multi-View Stereo</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao*</strong>, Xinlin Ren*, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">ICLR 2024</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2401.11673">paper</a>
+            <a href="https://github.com/maybeLx/MVSFormerPlusPlus/">code</a>
+          </div>
+          <div class="pub-desc">Prudently maximizing the inherent characteristics of attention to enhance various components of the MVS pipeline.</div>
+        </div>
+      </div>
+
+      <!-- ---- 2023 ---- -->
+      <div class="year-divider">2023</div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/cascadematching.jpg" alt="CasMTR"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2303.02885">Improving Transformer-based Image Matching by Cascaded Capturing Spatially Informative Keypoints</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">ICCV 2023</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/CasMTR/">page</a>
+            <a href="https://arxiv.org/abs/2303.02885">paper</a>
+            <a href="https://github.com/ewrfcas/CasMTR">code</a>
+          </div>
+          <div class="pub-desc">A transformer-based cascaded matching model with NMS filter for spatially informative keypoint matching.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/SiameseNet.jpg" alt="SiameseNet"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/pdf/2308.03217.pdf">Local Consensus Enhanced Siamese Network with Reciprocal Loss for Two-view Correspondence Learning</a></div>
+          <div class="pub-authors">Linbo Wang, Jing Wu, Xianyong Fang, Zhengyi Liu, <strong>Chenjie Cao</strong>, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">ACM MM 2023</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2308.03217.pdf">paper</a>
+          </div>
+          <div class="pub-desc">A Siamese network with a reciprocal loss for inlier/outlier classification in two-view matching.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/zits++.jpg" alt="ZITS++"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2210.05950">ZITS++: Image Inpainting by Improving the Incremental Transformer on Structural Priors</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao*</strong>, Qiaole Dong*, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">TPAMI 2023</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/ZITS-PlusPlus/">page</a>
+            <a href="https://arxiv.org/abs/2210.05950">paper</a>
+            <a href="https://github.com/ewrfcas/ZITS-PlusPlus">code</a>
+          </div>
+          <div class="pub-desc">Extension of ZITS with learning-based edges (L-Edge) as new priors to enhance meaningful structure recovery.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/matchflow.jpg" alt="MatchFlow"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2303.08384">Rethinking Optical Flow from Geometric Matching Consistent Perspective</a></div>
+          <div class="pub-authors">Qiaole Dong*, <strong>Chenjie Cao*</strong>, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">CVPR 2023</span></div>
+          <div class="pub-links">
+            <a href="https://dqiaole.github.io/MatchFlow/">page</a>
+            <a href="https://arxiv.org/abs/2303.08384">paper</a>
             <a href="https://github.com/DQiaole/MatchFlow">code</a>
-            <p></p>
-            <p>
-              Improving the optical flow estimation through the image matching pre-text task.
-            </p>
-          </td>
-        </tr>
+          </div>
+          <div class="pub-desc">Improving optical flow estimation through image matching pre-text task.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/mvsformer.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2208.02541">
-                <papertitle>MVSFormer: Multi-View Stereo by Learning Robust Image Features and Temperature-based Depth.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Xinlin Ren,
-              Yanwei Fu
-              <br>
-              <em>TMLR 2023</em>
-              <br>
-                  <a href="https://openreview.net/forum?id=2VWR6JfwNo">openreview</a> /
-                  <a href="https://arxiv.org/abs/2208.02541">paper</a> /
-                  <a href="https://github.com/ewrfcas/MVSFormer">code</a>
-              <p></p>
-              <p>
-                We explore the usage of pre-trained ViTs for multi-view stereo, and further propose to unify both
-                classification and regression-based depth predictions. MVSFormer achieves 1-st place in <a href="https://www.tanksandtemples.org/">Tanks-and-Temple</a>, and achieve 2-nd place in <a href="https://gigavision.cn/">GigaMVS</a>2022.
-              </p>
-            </td>
-          </tr>
-					
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/mae-far.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2208.01837">
-                <papertitle>Learning Prior Feature and Attention Enhanced Image Inpainting.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao*</strong>,
-              Qiaole Dong,
-              Yanwei Fu
-              <br>
-              <em>ECCV 2022</em>
-              <br>
-                <a href="https://ewrfcas.github.io/MAE-FAR/">page</a> /
-                <a href="https://arxiv.org/abs/2208.01837">paper</a> /
-                <a href="https://github.com/ewrfcas/MAE-FAR">code</a>
-              <p></p>
-              <p>Improving the image inpainting with Masked AutoEncoder pre-training and attention-based restoration.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/mvsformer.jpg" alt="MVSFormer"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2208.02541">MVSFormer: Multi-View Stereo by Learning Robust Image Features and Temperature-based Depth</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Xinlin Ren, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">TMLR 2023</span></div>
+          <div class="pub-links">
+            <a href="https://openreview.net/forum?id=2VWR6JfwNo">openreview</a>
+            <a href="https://arxiv.org/abs/2208.02541">paper</a>
+            <a href="https://github.com/ewrfcas/MVSFormer">code</a>
+          </div>
+          <div class="pub-desc">Pre-trained ViTs for MVS with unified classification and regression depth predictions. 1st on Tanks-and-Temples, 2nd on GigaMVS 2022.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/zits.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Dong_Incremental_Transformer_Structure_Enhanced_Image_Inpainting_With_Masking_Positional_Encoding_CVPR_2022_paper.pdf">
-                <papertitle>Incremental Transformer Structure Enhanced Image Inpainting with Masking Positional Encoding.</papertitle>
-              </a>
-              <br>
-              Qiaole Dong*,
-              <strong>Chenjie Cao*</strong>,
-              Yanwei Fu
-              <br>
-              <em>CVPR 2022</em>
-              <br>
-                <a href="https://dqiaole.github.io/ZITS_inpainting/">page</a> /
-                <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Dong_Incremental_Transformer_Structure_Enhanced_Image_Inpainting_With_Masking_Positional_Encoding_CVPR_2022_paper.pdf">paper</a> /
-                <a href="https://github.com/DQiaole/ZITS_inpainting">code</a>
-              <p></p>
-              <p>Learning structural priors (lines, edges) with transformers at first, then recovering textures with FFC based CNNs.</p>
-            </td>
-          </tr>
+      <!-- ---- 2022 ---- -->
+      <div class="year-divider">2022</div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/wavelet.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2206.03113">
-                <papertitle>Wavelet Prior Attention Learning in Axial Inpainting Network.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Chengrong Wang,
-              Yuntao Zhang,
-              Yanwei Fu
-              <br>
-              <em>Preprint</em>
-              <br>
-                <a href="https://arxiv.org/abs/2206.03113">paper</a>
-              <p></p>
-              <p>Firstly introducing wavelet prior for image inpainting. We also use axial-transformer to enhance the face/structural recovery.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/mae-far.jpg" alt="MAE-FAR"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2208.01837">Learning Prior Feature and Attention Enhanced Image Inpainting</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao*</strong>, Qiaole Dong, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">ECCV 2022</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/MAE-FAR/">page</a>
+            <a href="https://arxiv.org/abs/2208.01837">paper</a>
+            <a href="https://github.com/ewrfcas/MAE-FAR">code</a>
+          </div>
+          <div class="pub-desc">Image inpainting with Masked AutoEncoder pre-training and attention-based restoration.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/p2m++.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2204.09866">
-                <papertitle>Pixel2mesh++: 3d Mesh Generation and Refinement from Multi-View Images.</papertitle>
-              </a>
-              <br>
-              Chao Wen*,
-              Yinda Zhang*,
-              <strong>Chenjie Cao</strong>,
-              Zhuwen Li,
-              Xiangyang Xue,
-              Yanwei Fu
-              <br>
-              <em>TPAMI 2022</em>
-              <br>
-                <a href="https://ewrfcas.github.io/Pixel2MeshPlusPlus-MVDISN">page</a> /
-                <a href="https://arxiv.org/abs/2204.09866">paper</a> /
-                <a href="https://github.com/ewrfcas/Pixel2MeshPlusPlus-MVDISN">code</a>
-              <p></p>
-              <p>The extension of P2M++, which makes P2M++ also work on SDF-based methods.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/zits.jpg" alt="ZITS"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Dong_Incremental_Transformer_Structure_Enhanced_Image_Inpainting_With_Masking_Positional_Encoding_CVPR_2022_paper.pdf">Incremental Transformer Structure Enhanced Image Inpainting with Masking Positional Encoding</a></div>
+          <div class="pub-authors">Qiaole Dong*, <strong>Chenjie Cao*</strong>, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">CVPR 2022</span></div>
+          <div class="pub-links">
+            <a href="https://dqiaole.github.io/ZITS_inpainting/">page</a>
+            <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Dong_Incremental_Transformer_Structure_Enhanced_Image_Inpainting_With_Masking_Positional_Encoding_CVPR_2022_paper.pdf">paper</a>
+            <a href="https://github.com/DQiaole/ZITS_inpainting">code</a>
+          </div>
+          <div class="pub-desc">Learning structural priors (lines, edges) with transformers, then recovering textures with FFC-based CNNs.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/face.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://ieeexplore.ieee.org/document/9747428/">
-                <papertitle>High-Fidelity Portrait Editing via Exploring Differentiable Guided Sketches from the Latent Space.</papertitle>
-              </a>
-              <br>
-              Chengrong Wang,
-              <strong>Chenjie Cao</strong>,
-              Yanwei Fu,
-              Xiangyang Xue
-              <br>
-              <em>ICASSP 2022</em>
-              <br>
-                <a href="https://ieeexplore.ieee.org/document/9747428/">paper</a>
-              <p></p>
-              <p>Leveraging GAN inversion and differentiable edge detector to achieve an effective face editing.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/p2m++.jpg" alt="P2M++"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2204.09866">Pixel2mesh++: 3D Mesh Generation and Refinement from Multi-View Images</a></div>
+          <div class="pub-authors">Chao Wen*, Yinda Zhang*, <strong>Chenjie Cao</strong>, Zhuwen Li, Xiangyang Xue, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">TPAMI 2022</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/Pixel2MeshPlusPlus-MVDISN">page</a>
+            <a href="https://arxiv.org/abs/2204.09866">paper</a>
+            <a href="https://github.com/ewrfcas/Pixel2MeshPlusPlus-MVDISN">code</a>
+          </div>
+          <div class="pub-desc">Extension of P2M++ that also works on SDF-based methods.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/ilat.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://papers.nips.cc/paper_files/paper/2021/file/9996535e07258a7bbfd8b132435c5962-Paper.pdf">
-                <papertitle>The Image Local Autoregressive Transformer.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Yuxin Hong,
-              Xiang Li,
-              Chengrong Wang,
-              Chengming Xu,
-              XiangYang Xue,
-              Yanwei Fu
-              <br>
-              <em>NeurIPS 2021</em>
-              <br>
-                <a href="https://papers.nips.cc/paper_files/paper/2021/file/9996535e07258a7bbfd8b132435c5962-Paper.pdf">paper</a> /
-                <a href="https://github.com/ewrfcas/iLAT">code</a>
-              <p></p>
-              <p>Propose the local autoregressive for local editing. The two-stream convolution is proposed to tackle information leakage.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/face.jpg" alt="Portrait Editing"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/9747428/">High-Fidelity Portrait Editing via Exploring Differentiable Guided Sketches from the Latent Space</a></div>
+          <div class="pub-authors">Chengrong Wang, <strong>Chenjie Cao</strong>, Yanwei Fu, Xiangyang Xue</div>
+          <div class="pub-venue"><span class="venue-name">ICASSP 2022</span></div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/9747428/">paper</a>
+          </div>
+          <div class="pub-desc">Leveraging GAN inversion and differentiable edge detection for effective face editing.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/mst.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2103.15087">
-                <papertitle>Learning a Sketch Tensor Space for Image Inpainting of Man-Made Scenes.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Yanwei Fu
-              <br>
-              <em>ICCV 2021</em>
-              <br>
-                <a href="https://ewrfcas.github.io/MST_inpainting/">page</a> /
-                <a href="https://arxiv.org/abs/2103.15087">paper</a> /
-                <a href="https://github.com/ewrfcas/MST_inpainting">code</a>
-              <p></p>
-              <p>We firstly introduce segment lines to improve the image inpainting.</p>
-            </td>
-          </tr>
+      <!-- ---- 2021 ---- -->
+      <div class="year-divider">2021</div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/clue.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://aclanthology.org/2020.coling-main.419/">
-                <papertitle>CLUE: A Chinese Language Understanding Evaluation Benchmark.</papertitle>
-              </a>
-              <br>
-              Liang Xu,
-              Xuanwei Zhang,
-              Lu Li,
-              Hai Hu,
-              <strong>Chenjie Cao</strong>,
-              Yudong Li, Yechen Xu, Kai Sun,
-              Dian Yu, Cong Yu, Yin Tian, Qianqian Dong, Weitang Liu, Bo Shi, Yiming Cui, Junyi Li,
-              Jun Zeng, Rongzhao Wang, Weijian Xie, Yanting Li, Yina Patterson, Zuoyu Tian,
-              Yiwen Zhang, He Zhou, Shaoweihua Liu, Zhe Zhao, Qipeng Zhao, Cong Yue,
-              Xinrui Zhang, Zhengliang Yang, Kyle Richardson, Zhenzhong Lan
-              <br>
-              <em>COLING 2020</em>
-              <br>
-                <a href="https://www.cluebenchmarks.com/">page</a> /
-                <a href="https://aclanthology.org/2020.coling-main.419/">paper</a> /
-                <a href="https://github.com/CLUEbenchmark/CLUE">code</a>
-              <p></p>
-              <p>A comprehensive Chinese NLP benchmark.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/ilat.jpg" alt="iLAT"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://papers.nips.cc/paper_files/paper/2021/file/9996535e07258a7bbfd8b132435c5962-Paper.pdf">The Image Local Autoregressive Transformer</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Yuxin Hong, Xiang Li, Chengrong Wang, Chengming Xu, Xiangyang Xue, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">NeurIPS 2021</span></div>
+          <div class="pub-links">
+            <a href="https://papers.nips.cc/paper_files/paper/2021/file/9996535e07258a7bbfd8b132435c5962-Paper.pdf">paper</a>
+            <a href="https://github.com/ewrfcas/iLAT">code</a>
+          </div>
+          <div class="pub-desc">Local autoregressive model for local editing with two-stream convolution to tackle information leakage.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/tnnls.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://ieeexplore.ieee.org/document/8968753">
-                <papertitle>Entropy and Confidence-based Undersampling Boosting Random Forests for Imbalanced Problems.</papertitle>
-              </a>
-              <br>
-              Zhe Wang,
-              <strong>Chenjie Cao</strong>,
-              Yujin Zhu
-              <br>
-              <em>TNNLS 2020</em>
-              <br>
-                <a href="https://ieeexplore.ieee.org/document/8968753">paper</a>
-              <p></p>
-              <p>My early work about using ensemble learning to address imbalanced problems.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/mst.jpg" alt="MST"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2103.15087">Learning a Sketch Tensor Space for Image Inpainting of Man-Made Scenes</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">ICCV 2021</span></div>
+          <div class="pub-links">
+            <a href="https://ewrfcas.github.io/MST_inpainting/">page</a>
+            <a href="https://arxiv.org/abs/2103.15087">paper</a>
+            <a href="https://github.com/ewrfcas/MST_inpainting">code</a>
+          </div>
+          <div class="pub-desc">First work to introduce segment lines to improve image inpainting.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/sibert.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://aclanthology.org/2020.lrec-1.293.pdf">
-                <papertitle>SiBert: Enhanced Chinese Pre-trained Language Model with Sentence Insertion.</papertitle>
-              </a>
-              <br>
-              Jiahao Chen,
-              <strong>Chenjie Cao</strong>,
-              Xiuyan Jiang
-              <br>
-              <em>LREC 2020</em>
-              <br>
-                <a href="https://aclanthology.org/2020.lrec-1.293.pdf">paper</a>
-              <p></p>
-              <p>Improving the BERT pre-training with Sentence Insertion. SiBert won 1-st of CMRC2019.</p>
-            </td>
-          </tr>
+      <!-- ---- 2020 & Earlier ---- -->
+      <div class="year-divider">2020 &amp; Earlier</div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/nn.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">
-                <papertitle>Cascade Interpolation Learning with Double Subspaces and Confidence Disturbance for Imbalanced Problems.</papertitle>
-              </a>
-              <br>
-              Zhe Wang,
-              <strong>Chenjie Cao</strong>
-              <br>
-              <em>Neural Network 2019</em>
-              <br>
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">paper</a>
-              <p></p>
-              <p>My early work about using ensemble learning to address imbalanced problems.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/clue.jpg" alt="CLUE"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://aclanthology.org/2020.coling-main.419/">CLUE: A Chinese Language Understanding Evaluation Benchmark</a></div>
+          <div class="pub-authors">Liang Xu, Xuanwei Zhang, Lu Li, Hai Hu, <strong>Chenjie Cao</strong>, et al.</div>
+          <div class="pub-venue"><span class="venue-name">COLING 2020</span></div>
+          <div class="pub-links">
+            <a href="https://www.cluebenchmarks.com/">page</a>
+            <a href="https://aclanthology.org/2020.coling-main.419/">paper</a>
+            <a href="https://github.com/CLUEbenchmark/CLUE">code</a>
+          </div>
+          <div class="pub-desc">A comprehensive Chinese NLP benchmark.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/kbs.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">
-                <papertitle>IMCStacking: Cost-Sensitive Stacking Learning with Feature Inverse Mapping for Imbalanced Problems.</papertitle>
-              </a>
-              <br>
-              <strong>Chenjie Cao</strong>,
-              Zhe Wang
-              <br>
-              <em>KBS 2018</em>
-              <br>
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">paper</a>
-              <p></p>
-              <p>My early work about using ensemble learning to address imbalanced problems.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/tnnls.jpg" alt="TNNLS"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/8968753">Entropy and Confidence-based Undersampling Boosting Random Forests for Imbalanced Problems</a></div>
+          <div class="pub-authors">Zhe Wang, <strong>Chenjie Cao</strong>, Yujin Zhu</div>
+          <div class="pub-venue"><span class="venue-name">TNNLS 2020</span></div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/document/8968753">paper</a>
+          </div>
+          <div class="pub-desc">Ensemble learning approach to address imbalanced problems.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='img/asc.jpg' width="160">
-              </div>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">
-                <papertitle>Information Entropy based Sample Reduction for Support Vector Data Description.</papertitle>
-              </a>
-              <br>
-              Li DongDong, Zhe Wang,
-              <strong>Chenjie Cao</strong>,
-              Yu Liu
-              <br>
-              <em>ASC 2018</em>
-              <br>
-                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">paper</a>
-              <p></p>
-              <p>My early work about using SVDD to address imbalanced problems.</p>
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/sibert.jpg" alt="SiBert"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://aclanthology.org/2020.lrec-1.293.pdf">SiBert: Enhanced Chinese Pre-trained Language Model with Sentence Insertion</a></div>
+          <div class="pub-authors">Jiahao Chen, <strong>Chenjie Cao</strong>, Xiuyan Jiang</div>
+          <div class="pub-venue"><span class="venue-name">LREC 2020</span></div>
+          <div class="pub-links">
+            <a href="https://aclanthology.org/2020.lrec-1.293.pdf">paper</a>
+          </div>
+          <div class="pub-desc">Improving BERT pre-training with Sentence Insertion. 1st place of CMRC2019.</div>
+        </div>
+      </div>
 
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/nn.jpg" alt="NN"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">Cascade Interpolation Learning with Double Subspaces and Confidence Disturbance for Imbalanced Problems</a></div>
+          <div class="pub-authors">Zhe Wang, <strong>Chenjie Cao</strong></div>
+          <div class="pub-venue"><span class="venue-name">Neural Networks 2019</span></div>
+          <div class="pub-links">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">paper</a>
+          </div>
+          <div class="pub-desc">Ensemble learning for imbalanced problems.</div>
+        </div>
+      </div>
 
-        </tbody></table>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/kbs.jpg" alt="KBS"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">IMCStacking: Cost-Sensitive Stacking Learning with Feature Inverse Mapping for Imbalanced Problems</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Zhe Wang</div>
+          <div class="pub-venue"><span class="venue-name">KBS 2018</span></div>
+          <div class="pub-links">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">paper</a>
+          </div>
+          <div class="pub-desc">Cost-sensitive stacking learning with feature inverse mapping for imbalanced problems.</div>
+        </div>
+      </div>
 
-				
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Misc</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/asc.jpg" alt="ASC"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">Information Entropy based Sample Reduction for Support Vector Data Description</a></div>
+          <div class="pub-authors">Li DongDong, Zhe Wang, <strong>Chenjie Cao</strong>, Yu Liu</div>
+          <div class="pub-venue"><span class="venue-name">ASC 2018</span></div>
+          <div class="pub-links">
+            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">paper</a>
+          </div>
+          <div class="pub-desc">Using SVDD to address imbalanced problems.</div>
+        </div>
+      </div>
 
-          <tr>
-            <td width="75%" valign="center">
-              <strong>Second-Place</strong> in <a href="https://gigavision.cn/">GigaReconstruction</a> 2022.
-            </td>
-          </tr>
+      <!-- Preprint -->
+      <div class="year-divider">Preprint</div>
 
-          <tr>
-            <td width="75%" valign="center">
-              <strong>Reviewer</strong> in TPAMI, IJCV, ACMMM2023, CVPR2023, NeurIPS 2022,2023, ICML2023, ICLR2023.
-            </td>
-          </tr>
-          <tr>
-            <td width="75%" valign="center">
-              Yanwei Fu, Shenghua Gao, <strong>Chenjie Cao</strong> and Qiaole Dong. Tutorial: <a href="https://dqiaole.github.io/priors_guided_image_editing_synthesis/">The Priors Guided Image Editing and Synthesis</a> in ACCV2022.
-            </td>
-          </tr>
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="img/wavelet.jpg" alt="Wavelet"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2206.03113">Wavelet Prior Attention Learning in Axial Inpainting Network</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Chengrong Wang, Yuntao Zhang, Yanwei Fu</div>
+          <div class="pub-venue"><span class="venue-name">Preprint</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2206.03113">paper</a>
+          </div>
+          <div class="pub-desc">First introduction of wavelet prior for image inpainting with axial-transformer for face/structural recovery.</div>
+        </div>
+      </div>
 
-					
-					
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                <a href="https://jonbarron.info/">Template</a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+    </div>
+  </section>
+
+  <!-- ==================== MISC ==================== -->
+  <section class="section">
+    <h2 class="section-title">Miscellaneous</h2>
+    <ul class="misc-list">
+      <li>🏆 <strong>Second Place</strong> in <a href="https://gigavision.cn/">GigaReconstruction</a> 2022.</li>
+      <li>📝 <strong>Reviewer</strong> for TPAMI, IJCV, ACM MM, CVPR, NeurIPS, ICML, ICLR.</li>
+      <li>🎓 Tutorial: <a href="https://dqiaole.github.io/priors_guided_image_editing_synthesis/">The Priors Guided Image Editing and Synthesis</a> at ACCV 2022 (w/ Yanwei Fu, Shenghua Gao, Qiaole Dong).</li>
+    </ul>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <div class="footer">
+    <p>Template inspired by <a href="https://jonbarron.info/">Jon Barron</a> · Last updated 2025</p>
+  </div>
+
+</div>
 </body>
-
 </html>
-
