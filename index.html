@@ -9,18 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fafafa;
+      --bg: #f7f7f5;
       --card-bg: #ffffff;
-      --text: #1a1a2e;
-      --text-secondary: #555770;
-      --accent: #2d5be3;
-      --accent-light: #e8edfb;
+      --text: #2b2d42;
+      --text-secondary: #5a5d72;
+      --accent: #3d5a80;
+      --accent-light: #e8eef5;
       --border: #e8e8ee;
       --tag-bg: #f0f1f5;
-      --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
-      --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
-      --radius: 12px;
-      --max-width: 860px;
+      --shadow: 0 1px 4px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.03);
+      --shadow-hover: 0 4px 12px rgba(0,0,0,0.07), 0 8px 24px rgba(0,0,0,0.05);
+      --radius: 10px;
+      --max-width: 900px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -89,13 +89,14 @@
       border-radius: 8px;
       font-size: 13px;
       font-weight: 500;
-      background: var(--tag-bg);
+      background: var(--card-bg);
+      border: 1px solid var(--border);
       color: var(--text);
       transition: all 0.2s;
     }
     .hero-links a:hover {
-      background: var(--accent);
-      color: #fff;
+      border-color: var(--accent);
+      color: var(--accent);
       opacity: 1;
     }
     .hero-links a svg {
@@ -109,10 +110,10 @@
     .avatar-wrap img {
       width: 160px;
       height: 160px;
-      border-radius: 50%;
+      border-radius: 16px;
       object-fit: cover;
       object-position: center 15%;
-      border: 3px solid var(--border);
+      border: 2px solid var(--border);
       transition: transform 0.3s;
     }
     .avatar-wrap img:hover { transform: scale(1.04); }
@@ -133,10 +134,10 @@
       font-family: 'Source Serif 4', Georgia, serif;
       font-size: 22px;
       font-weight: 600;
-      letter-spacing: -0.3px;
+      letter-spacing: 0.5px;
       padding-bottom: 12px;
       margin-bottom: 20px;
-      border-bottom: 2px solid var(--text);
+      border-bottom: 1px solid var(--border);
       display: inline-block;
     }
 
@@ -196,7 +197,7 @@
     .pub-list {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
     .pub-card {
       display: flex;
@@ -204,18 +205,18 @@
       padding: 20px;
       background: var(--card-bg);
       border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: box-shadow 0.25s, border-color 0.25s;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.25s, transform 0.25s;
     }
     .pub-card:hover {
       box-shadow: var(--shadow-hover);
-      border-color: transparent;
+      transform: translateY(-2px);
     }
     .pub-thumb {
       flex-shrink: 0;
-      width: 150px;
-      height: 100px;
-      border-radius: 8px;
+      width: 180px;
+      height: 120px;
+      border-radius: 6px;
       overflow: hidden;
       background: var(--tag-bg);
       display: flex;
@@ -270,8 +271,9 @@
     }
     .pub-venue .venue-badge {
       display: inline-block;
-      background: #fee2e2;
-      color: #dc2626;
+      background: transparent;
+      color: #b45309;
+      border: 1px solid #e5a04e;
       font-size: 11px;
       font-weight: 600;
       padding: 1px 7px;
@@ -288,13 +290,14 @@
       font-size: 12px;
       padding: 3px 10px;
       border-radius: 5px;
-      background: var(--tag-bg);
+      background: transparent;
+      border: 1px solid var(--border);
       color: var(--text-secondary);
       font-weight: 500;
       transition: all 0.2s;
     }
     .pub-links a:hover {
-      background: var(--accent-light);
+      border-color: var(--accent);
       color: var(--accent);
       opacity: 1;
     }
@@ -364,7 +367,7 @@
       .hero-links { justify-content: center; }
       .avatar-wrap img { width: 120px; height: 120px; }
       .pub-card { flex-direction: column; }
-      .pub-thumb { width: 100%; height: 160px; }
+      .pub-thumb { width: 100%; height: 180px; }
       .section-title { font-size: 19px; }
     }
 
