@@ -231,6 +231,15 @@
     .pub-card:hover .pub-thumb img {
       transform: scale(1.05);
     }
+    .pub-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    .pub-card:hover .pub-thumb video {
+      transform: scale(1.05);
+    }
     .pub-info { flex: 1; min-width: 0; }
     .pub-title {
       font-weight: 600;
@@ -449,6 +458,21 @@
 
       <!-- ---- 2026 ---- -->
       <div class="year-divider">2026</div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><video src="https://3d-models.hunyuan.tencent.com/world/world2_0/Video/Worldplay2.0_en.mp4" poster="https://3d-models.hunyuan.tencent.com/world/assets/jpg/world2_0-video-poster-en-CHalsMmD.jpg" autoplay muted loop playsinline></video></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2604.14268">HY-World 2.0: A Multi-Modal World Model for Reconstructing, Generating, and Simulating 3D Worlds</a></div>
+          <div class="pub-authors"><strong>Chenjie Cao</strong>, Xuhui Zuo, Zhenwei Wang, Yisu Zhang, Junta Wu, Zhenyang Liu, Yuning Gong, Yang Liu, Bo Yuan, Chao Zhang, et al. (Team HY-World)</div>
+          <div class="pub-venue"><span class="venue-name">Arxiv 2026</span></div>
+          <div class="pub-links">
+            <a href="https://3d-models.hunyuan.tencent.com/world/">page</a>
+            <a href="https://arxiv.org/abs/2604.14268">paper</a>
+            <a href="https://github.com/Tencent-Hunyuan/HY-World-2.0">code</a>
+          </div>
+          <div class="pub-desc">A multi-modal world model framework that unifies world generation and world reconstruction, producing navigable 3D scenes from text, images, or videos.</div>
+        </div>
+      </div>
 
       <div class="pub-card">
         <div class="pub-thumb"><img src="img/worldstereo.jpg" alt="WorldStereo"></div>
