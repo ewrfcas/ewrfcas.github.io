@@ -126,6 +126,41 @@
       margin-top: 8px;
     }
 
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .news-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .news-date {
+      flex: 0 0 74px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 6px;
+      padding: 4px 8px;
+      text-align: center;
+      line-height: 1.4;
+    }
+    .news-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+    .news-text strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
     /* ---- Section ---- */
     .section {
       margin-top: 48px;
@@ -331,20 +366,33 @@
       background: var(--border);
     }
 
-    /* ---- Misc / Awards ---- */
-    .misc-list {
-      list-style: none;
-      padding: 0;
+    .pub-collapse {
+      margin-top: 12px;
     }
-    .misc-list li {
+    .pub-collapse summary {
+      list-style: none;
+      cursor: pointer;
+    }
+    .pub-collapse summary::-webkit-details-marker {
+      display: none;
+    }
+    .pub-collapse summary::before {
+      content: '+';
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 14px;
       color: var(--text-secondary);
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      line-height: 1.6;
+      width: 10px;
+      flex: 0 0 auto;
     }
-    .misc-list li:last-child { border-bottom: none; }
-    .misc-list li strong { color: var(--text); }
+    .pub-collapse[open] summary::before {
+      content: '-';
+    }
+    .pub-collapse .pub-list-inner {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
     /* ---- Footer ---- */
     .footer {
@@ -366,6 +414,13 @@
       }
       .hero-links { justify-content: center; }
       .avatar-wrap img { width: 120px; height: 120px; }
+      .news-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .news-date {
+        flex: none;
+      }
       .pub-card { flex-direction: column; }
       .pub-thumb { width: 100%; height: 180px; }
       .section-title { font-size: 19px; }
@@ -417,6 +472,33 @@
   <div class="visitor-count">
     <span id="busuanzi_container_site_uv">Visitors:&nbsp;<span id="busuanzi_value_site_uv"></span></span>
   </div>
+
+  <!-- ==================== NEWS ==================== -->
+  <section class="section">
+    <h2 class="section-title">News 🎉</h2>
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-date">2026.04</div>
+        <div class="news-text">Two papers were accepted to ICML 2026: <a href="https://arxiv.org/abs/2602.09022"><strong>WorldCompass</strong></a> and <a href="https://jingyunliang.github.io/RealisMotion/"><strong>RealisMotion</strong></a>.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026.04</div>
+        <div class="news-text"><a href="https://3d-models.hunyuan.tencent.com/world/"><strong>HY-World 2.0</strong></a> was released as a multi-modal 3D world.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2026.02</div>
+        <div class="news-text"><a href="https://arxiv.org/abs/2603.02049"><strong>WorldStereo</strong></a> was accepted to CVPR 2026.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025.11</div>
+        <div class="news-text"><a href="https://arxiv.org/abs/2507.16535"><strong>EarthCrafter</strong></a> was accepted to AAAI 2026 as an Oral presentation.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2025.8</div>
+        <div class="news-text"><a href="https://alibaba-damo-academy.github.io/Uni3C/"><strong>Uni3C</strong></a> was accepted to SIGGRAPH Asia 2025.</div>
+      </div>
+    </div>
+  </section>
 
   <!-- ==================== EXPERIENCE ==================== -->
   <section class="section">
@@ -478,6 +560,35 @@
       </div>
 
       <div class="pub-card">
+        <div class="pub-thumb"><img src="img/worldcompass.jpg" alt="WorldCompass"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/abs/2602.09022">WorldCompass: Reinforcement Learning for Long-Horizon World Models</a></div>
+          <div class="pub-authors">Zehan Wang, Tengfei Wang, Haiyu Zhang, Xuhui Zuo, Junta Wu, Haoyuan Wang, Wenqiang Sun, Zhenwei Wang, <strong>Chenjie Cao</strong>, Hengshuang Zhao, Chunchao Guo, Zhou Zhao</div>
+          <div class="pub-venue"><span class="venue-name">ICML 2026</span></div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2602.09022">paper</a>
+          </div>
+          <div class="pub-desc">A novel RL post-training framework for long-horizon, interactive video-based world models.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><video src="https://jingyunliang.github.io/RealisMotion/assets/videos/vogue_monalisa.mp4" autoplay muted loop playsinline></video></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://jingyunliang.github.io/RealisMotion/">RealisMotion: Decomposed Human Motion Control and Video Generation in the World Space</a></div>
+          <div class="pub-authors">Jingyun Liang, Jingkai Zhou, Shikai Li, <strong>Chenjie Cao</strong>, Lei Sun, Yichen Qian, Weihua Chen, Fan Wang</div>
+          <div class="pub-venue"><span class="venue-name">ICML 2026</span></div>
+          <div class="pub-links">
+            <a href="https://jingyunliang.github.io/RealisMotion/">page</a>
+            <a href="https://arxiv.org/pdf/2508.08588">paper</a>
+            <a href="https://github.com/JingyunLiang/RealisMotion">code</a>
+            <a href="https://github.com/JingyunLiang/RealisMotion/releases/download/v0.0/RealisMotion_supp.pdf">supp</a>
+          </div>
+          <div class="pub-desc">A world-space video generation framework with decomposed human motion control and a Trajectory100 evaluation set.</div>
+        </div>
+      </div>
+
+      <div class="pub-card">
         <div class="pub-thumb"><img src="img/worldstereo.jpg" alt="WorldStereo"></div>
         <div class="pub-info">
           <div class="pub-title"><a href="https://arxiv.org/abs/2603.02049">WorldStereo: Bridging Camera-Guided Video Generation and Scene Reconstruction via 3D Geometric Memories</a></div>
@@ -488,19 +599,6 @@
             <a href="https://github.com/FuchengSu/WorldStereo">code</a>
           </div>
           <div class="pub-desc">A novel framework that bridges camera-guided video generation and 3D reconstruction via global-geometric memory and spatial-stereo memory.</div>
-        </div>
-      </div>
-
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/worldcompass.jpg" alt="WorldCompass"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://arxiv.org/abs/2602.09022">WorldCompass: Reinforcement Learning for Long-Horizon World Models</a></div>
-          <div class="pub-authors">Zehan Wang, Tengfei Wang, Haiyu Zhang, Xuhui Zuo, Junta Wu, Haoyuan Wang, Wenqiang Sun, Zhenwei Wang, <strong>Chenjie Cao</strong>, Hengshuang Zhao, Chunchao Guo, Zhou Zhao</div>
-          <div class="pub-venue"><span class="venue-name">Arxiv 2026</span></div>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2602.09022">paper</a>
-          </div>
-          <div class="pub-desc">A novel RL post-training framework for long-horizon, interactive video-based world models.</div>
         </div>
       </div>
 
@@ -866,115 +964,105 @@
       </div>
 
       <!-- ---- 2020 & Earlier ---- -->
-      <div class="year-divider">2020 &amp; Earlier</div>
-
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/clue.jpg" alt="CLUE"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://aclanthology.org/2020.coling-main.419/">CLUE: A Chinese Language Understanding Evaluation Benchmark</a></div>
-          <div class="pub-authors">Liang Xu, Xuanwei Zhang, Lu Li, Hai Hu, <strong>Chenjie Cao</strong>, et al.</div>
-          <div class="pub-venue"><span class="venue-name">COLING 2020</span></div>
-          <div class="pub-links">
-            <a href="https://www.cluebenchmarks.com/">page</a>
-            <a href="https://aclanthology.org/2020.coling-main.419/">paper</a>
-            <a href="https://github.com/CLUEbenchmark/CLUE">code</a>
+      <details class="pub-collapse">
+        <summary class="year-divider">2020 &amp; Earlier</summary>
+        <div class="pub-list-inner">
+          <div class="pub-card">
+            <div class="pub-thumb"><img src="img/clue.jpg" alt="CLUE"></div>
+            <div class="pub-info">
+              <div class="pub-title"><a href="https://aclanthology.org/2020.coling-main.419/">CLUE: A Chinese Language Understanding Evaluation Benchmark</a></div>
+              <div class="pub-authors">Liang Xu, Xuanwei Zhang, Lu Li, Hai Hu, <strong>Chenjie Cao</strong>, et al.</div>
+              <div class="pub-venue"><span class="venue-name">COLING 2020</span></div>
+              <div class="pub-links">
+                <a href="https://www.cluebenchmarks.com/">page</a>
+                <a href="https://aclanthology.org/2020.coling-main.419/">paper</a>
+                <a href="https://github.com/CLUEbenchmark/CLUE">code</a>
+              </div>
+              <div class="pub-desc">A comprehensive Chinese NLP benchmark.</div>
+            </div>
           </div>
-          <div class="pub-desc">A comprehensive Chinese NLP benchmark.</div>
-        </div>
-      </div>
 
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/tnnls.jpg" alt="TNNLS"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/8968753">Entropy and Confidence-based Undersampling Boosting Random Forests for Imbalanced Problems</a></div>
-          <div class="pub-authors">Zhe Wang, <strong>Chenjie Cao</strong>, Yujin Zhu</div>
-          <div class="pub-venue"><span class="venue-name">TNNLS 2020</span></div>
-          <div class="pub-links">
-            <a href="https://ieeexplore.ieee.org/document/8968753">paper</a>
+          <div class="pub-card">
+            <div class="pub-thumb"><img src="img/tnnls.jpg" alt="TNNLS"></div>
+            <div class="pub-info">
+              <div class="pub-title"><a href="https://ieeexplore.ieee.org/document/8968753">Entropy and Confidence-based Undersampling Boosting Random Forests for Imbalanced Problems</a></div>
+              <div class="pub-authors">Zhe Wang, <strong>Chenjie Cao</strong>, Yujin Zhu</div>
+              <div class="pub-venue"><span class="venue-name">TNNLS 2020</span></div>
+              <div class="pub-links">
+                <a href="https://ieeexplore.ieee.org/document/8968753">paper</a>
+              </div>
+              <div class="pub-desc">Ensemble learning approach to address imbalanced problems.</div>
+            </div>
           </div>
-          <div class="pub-desc">Ensemble learning approach to address imbalanced problems.</div>
-        </div>
-      </div>
 
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/sibert.jpg" alt="SiBert"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://aclanthology.org/2020.lrec-1.293.pdf">SiBert: Enhanced Chinese Pre-trained Language Model with Sentence Insertion</a></div>
-          <div class="pub-authors">Jiahao Chen, <strong>Chenjie Cao</strong>, Xiuyan Jiang</div>
-          <div class="pub-venue"><span class="venue-name">LREC 2020</span></div>
-          <div class="pub-links">
-            <a href="https://aclanthology.org/2020.lrec-1.293.pdf">paper</a>
+          <div class="pub-card">
+            <div class="pub-thumb"><img src="img/sibert.jpg" alt="SiBert"></div>
+            <div class="pub-info">
+              <div class="pub-title"><a href="https://aclanthology.org/2020.lrec-1.293.pdf">SiBert: Enhanced Chinese Pre-trained Language Model with Sentence Insertion</a></div>
+              <div class="pub-authors">Jiahao Chen, <strong>Chenjie Cao</strong>, Xiuyan Jiang</div>
+              <div class="pub-venue"><span class="venue-name">LREC 2020</span></div>
+              <div class="pub-links">
+                <a href="https://aclanthology.org/2020.lrec-1.293.pdf">paper</a>
+              </div>
+              <div class="pub-desc">Improving BERT pre-training with Sentence Insertion. 1st place of CMRC2019.</div>
+            </div>
           </div>
-          <div class="pub-desc">Improving BERT pre-training with Sentence Insertion. 1st place of CMRC2019.</div>
-        </div>
-      </div>
 
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/nn.jpg" alt="NN"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">Cascade Interpolation Learning with Double Subspaces and Confidence Disturbance for Imbalanced Problems</a></div>
-          <div class="pub-authors">Zhe Wang, <strong>Chenjie Cao</strong></div>
-          <div class="pub-venue"><span class="venue-name">Neural Networks 2019</span></div>
-          <div class="pub-links">
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">paper</a>
+          <div class="pub-card">
+            <div class="pub-thumb"><img src="img/nn.jpg" alt="NN"></div>
+            <div class="pub-info">
+              <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">Cascade Interpolation Learning with Double Subspaces and Confidence Disturbance for Imbalanced Problems</a></div>
+              <div class="pub-authors">Zhe Wang, <strong>Chenjie Cao</strong></div>
+              <div class="pub-venue"><span class="venue-name">Neural Networks 2019</span></div>
+              <div class="pub-links">
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0893608019301765">paper</a>
+              </div>
+              <div class="pub-desc">Ensemble learning for imbalanced problems.</div>
+            </div>
           </div>
-          <div class="pub-desc">Ensemble learning for imbalanced problems.</div>
-        </div>
-      </div>
 
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/kbs.jpg" alt="KBS"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">IMCStacking: Cost-Sensitive Stacking Learning with Feature Inverse Mapping for Imbalanced Problems</a></div>
-          <div class="pub-authors"><strong>Chenjie Cao</strong>, Zhe Wang</div>
-          <div class="pub-venue"><span class="venue-name">KBS 2018</span></div>
-          <div class="pub-links">
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">paper</a>
+          <div class="pub-card">
+            <div class="pub-thumb"><img src="img/kbs.jpg" alt="KBS"></div>
+            <div class="pub-info">
+              <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">IMCStacking: Cost-Sensitive Stacking Learning with Feature Inverse Mapping for Imbalanced Problems</a></div>
+              <div class="pub-authors"><strong>Chenjie Cao</strong>, Zhe Wang</div>
+              <div class="pub-venue"><span class="venue-name">KBS 2018</span></div>
+              <div class="pub-links">
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705118300947">paper</a>
+              </div>
+              <div class="pub-desc">Cost-sensitive stacking learning with feature inverse mapping for imbalanced problems.</div>
+            </div>
           </div>
-          <div class="pub-desc">Cost-sensitive stacking learning with feature inverse mapping for imbalanced problems.</div>
-        </div>
-      </div>
 
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/asc.jpg" alt="ASC"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">Information Entropy based Sample Reduction for Support Vector Data Description</a></div>
-          <div class="pub-authors">Li DongDong, Zhe Wang, <strong>Chenjie Cao</strong>, Yu Liu</div>
-          <div class="pub-venue"><span class="venue-name">ASC 2018</span></div>
-          <div class="pub-links">
-            <a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">paper</a>
+          <div class="pub-card">
+            <div class="pub-thumb"><img src="img/asc.jpg" alt="ASC"></div>
+            <div class="pub-info">
+              <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">Information Entropy based Sample Reduction for Support Vector Data Description</a></div>
+              <div class="pub-authors">Li DongDong, Zhe Wang, <strong>Chenjie Cao</strong>, Yu Liu</div>
+              <div class="pub-venue"><span class="venue-name">ASC 2018</span></div>
+              <div class="pub-links">
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S1568494618301121">paper</a>
+              </div>
+              <div class="pub-desc">Using SVDD to address imbalanced problems.</div>
+            </div>
           </div>
-          <div class="pub-desc">Using SVDD to address imbalanced problems.</div>
-        </div>
-      </div>
 
-      <!-- Preprint -->
-      <div class="year-divider">Preprint</div>
-
-      <div class="pub-card">
-        <div class="pub-thumb"><img src="img/wavelet.jpg" alt="Wavelet"></div>
-        <div class="pub-info">
-          <div class="pub-title"><a href="https://arxiv.org/abs/2206.03113">Wavelet Prior Attention Learning in Axial Inpainting Network</a></div>
-          <div class="pub-authors"><strong>Chenjie Cao</strong>, Chengrong Wang, Yuntao Zhang, Yanwei Fu</div>
-          <div class="pub-venue"><span class="venue-name">Preprint</span></div>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2206.03113">paper</a>
+          <div class="pub-card">
+            <div class="pub-thumb"><img src="img/wavelet.jpg" alt="Wavelet"></div>
+            <div class="pub-info">
+              <div class="pub-title"><a href="https://arxiv.org/abs/2206.03113">Wavelet Prior Attention Learning in Axial Inpainting Network</a></div>
+              <div class="pub-authors"><strong>Chenjie Cao</strong>, Chengrong Wang, Yuntao Zhang, Yanwei Fu</div>
+              <div class="pub-venue"><span class="venue-name">Preprint</span></div>
+              <div class="pub-links">
+                <a href="https://arxiv.org/abs/2206.03113">paper</a>
+              </div>
+              <div class="pub-desc">First introduction of wavelet prior for image inpainting with axial-transformer for face/structural recovery.</div>
+            </div>
           </div>
-          <div class="pub-desc">First introduction of wavelet prior for image inpainting with axial-transformer for face/structural recovery.</div>
         </div>
-      </div>
+      </details>
 
     </div>
-  </section>
-
-  <!-- ==================== MISC ==================== -->
-  <section class="section">
-    <h2 class="section-title">Miscellaneous</h2>
-    <ul class="misc-list">
-      <li>🏆 <strong>Second Place</strong> in <a href="https://gigavision.cn/">GigaReconstruction</a> 2022.</li>
-      <li>📝 <strong>Reviewer</strong> for TPAMI, IJCV, ACM MM, CVPR, NeurIPS, ICML, ICLR.</li>
-      <li>🎓 Tutorial: <a href="https://dqiaole.github.io/priors_guided_image_editing_synthesis/">The Priors Guided Image Editing and Synthesis</a> at ACCV 2022 (w/ Yanwei Fu, Shenghua Gao, Qiaole Dong).</li>
-    </ul>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
