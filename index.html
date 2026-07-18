@@ -161,6 +161,46 @@
       font-weight: 600;
     }
 
+    /* ---- Highlighted Product Update ---- */
+    .product-update {
+      margin-bottom: 16px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 16px;
+      border: 1px solid #cbd9e8;
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      background: var(--accent-light);
+    }
+    .product-update video {
+      flex: 0 0 150px;
+      width: 150px;
+      height: 84px;
+      object-fit: cover;
+      border-radius: 5px;
+      background: #111;
+    }
+    .product-update-date {
+      display: inline-block;
+      margin-bottom: 3px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+    }
+    .product-update h3 {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+    .product-update p {
+      font-size: 12.5px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+    }
+
     /* ---- Section ---- */
     .section {
       margin-top: 48px;
@@ -423,6 +463,8 @@
       }
       .pub-card { flex-direction: column; }
       .pub-thumb { width: 100%; height: 180px; }
+      .product-update { flex-direction: column; align-items: stretch; }
+      .product-update video { width: 100%; height: auto; aspect-ratio: 16 / 9; }
       .section-title { font-size: 19px; }
     }
 
@@ -476,7 +518,19 @@
   <!-- ==================== NEWS ==================== -->
   <section class="section">
     <h2 class="section-title">News 🎉</h2>
+    <section class="product-update">
+      <video src="img/hy-world-2-1.mp4" autoplay muted loop playsinline aria-label="HY-World 2.1 demo video"></video>
+      <div>
+        <span class="product-update-date">2026.07</span>
+        <h3><a href="https://3d.hunyuan.tencent.com/sceneTo3D">HY-World 2.1 is now available</a></h3>
+        <p>Team HY-World's July 2026 update brings sharper, more detailed panorama generation; fully in-house reconstruction with more accurate panoramic depth; a gallery mode; normal-regularized 3DGS optimization; and broader view completion at no additional runtime.</p>
+      </div>
+    </section>
     <div class="news-list">
+      <div class="news-item">
+        <div class="news-date">2026.07</div>
+        <div class="news-text"><a href="https://omnix4d.github.io/"><strong>OmniX</strong></a> was accepted to ECCV 2026.</div>
+      </div>
       <div class="news-item">
         <div class="news-date">2026.04</div>
         <div class="news-text">Two papers were accepted to ICML 2026: <a href="https://arxiv.org/abs/2602.09022"><strong>WorldCompass</strong></a> and <a href="https://jingyunliang.github.io/RealisMotion/"><strong>RealisMotion</strong></a>.</div>
@@ -543,6 +597,22 @@
 
       <!-- ---- 2026 ---- -->
       <div class="year-divider">2026</div>
+
+      <div class="pub-card">
+        <div class="pub-thumb"><img src="https://omnix4d.github.io/assets/github_demo.gif" alt="OmniX teaser"></div>
+        <div class="pub-info">
+          <div class="pub-title"><a href="https://arxiv.org/pdf/2607.10840">OmniX: Any-view and Any-time 4D Reconstruction via Feed-forward Trajectory Fields</a></div>
+          <div class="pub-authors">Yanqin Jiang, Tengfei Wang, Zhengwei Wang, <strong>Chenjie Cao</strong>, Junta Wu, Wenhan Luo, Weiming Hu, Jin Gao, Chunchao Guo</div>
+          <div class="pub-venue"><span class="venue-name">ECCV 2026</span></div>
+          <div class="pub-links">
+            <a href="https://omnix4d.github.io/">page</a>
+            <a href="https://arxiv.org/pdf/2607.10840">paper</a>
+            <a href="https://www.youtube.com/watch?v=yQK5oPbaybM">video</a>
+            <a href="https://github.com/yanqinJiang/OmniX">code</a>
+          </div>
+          <div class="pub-desc">A feed-forward 4D reconstruction framework that predicts dense 3D point trajectories from videos with large camera motion, enabled by dynamic tokens and a large-scale 4D data engine.</div>
+        </div>
+      </div>
 
       <div class="pub-card">
         <div class="pub-thumb"><video src="https://3d-models.hunyuan.tencent.com/world/world2_0/Video/Worldplay2.0_en.mp4" poster="https://3d-models.hunyuan.tencent.com/world/assets/jpg/world2_0-video-poster-en-CHalsMmD.jpg" autoplay muted loop playsinline></video></div>
